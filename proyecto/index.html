@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Qbita - Acerca del Proyecto</title>
+    <meta name="description" content="Qbita.com.ar - Sitio web que trabaja con el concepto de arte que modifica la persepción urbana, desde la ubicación web. Trabaja con una galería de realidad aumentaba, basadas en pinturas de artístas destacados." />
+    <meta name="keywords" content="realidad, aumentada, galeria, arte" />
+    <meta name="author" content="Andón Pablo, Eberhardt Nicolás, Colletti Karen, Buioli Ignacio" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <link href='../estilo.css' rel='stylesheet' type='text/css'>
+    <script src="../jquery.min.js" language="javascript" type="text/javascript"></script>
+    <script src="../jquery.validate.js" language="javascript" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="header">
+      <div style="background:#000;width:18px;height:18px;left:0;bottom:0;position:absolute;">
+      </div>
+      <h1>
+        <a href="../index.html"><img src="../img/biner.gif" alt="Qbita" class="imgh1" />Qbita</a>
+        <span style="font-size:12px;">beta</span>
+      </h1>
+      <ul>
+        <li class="bordeando"><a href="../galeria/index.html">Galer&iacute;a</a></li>
+        <li class="bordeando"><a href="../data/index.html">Data</a></li>
+        <li class="bordeando"><a href="../proyecto/index.html">Proyecto</a></li>
+        <li class="borde-sin-borde"><a href="../donde_estoy/index.html" class="donde">¿D&oacute;nde Estoy?</a></li>
+      </ul>
+      <div style="background:#000;width:18px;height:18px;right:0;bottom:0;position:absolute;"></div>
+    </div>
+    <div id="con">
+        <div id="contenido2">
+            <div class="descor">
+            <h2>Contacto</h2>
+                <form method="post" action="mailto:ibuioli@gmail.com" name="suscribirse" id="form_contacto" enctype="text/plain">
+                <fieldset id="datos_form">
+                <legend>Datos</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" value="" id="texto" class="texto required" />
+                <label for="mail">E-Mail:</label><input type="email" name="mail" value="" id="mail" class="texto required email"/>
+                </fieldset>
+                <fieldset>
+                <legend>Mensaje</legend>
+                <label for="tema">Tema:</label>
+                <input class="rede" type="radio" name="group1" value="Propuesta" checked>
+                <span class="radio">Proponer Exhibici&oacute;n</span>
+                <input class="rede" type="radio" name="group1" value="Problema">
+                <span class="radio">Reportar Problema</span><br />
+                <label for="comentario" class="mensj">Mensaje:</label>
+                <textarea name="comentario" cols="1" rows="1" class="required"></textarea>
+                </fieldset>
+                <fieldset id="boton"><input type="submit" name="enviar" value="Enviar" class="botones" /><input type="reset" name="borrar" value="Limpiar" class="botones" />
+                </fieldset>
+                </form>
+            </div>
+            <div class="descor">
+                <h2>Demo</h2>
+                <div class="demor">
+                </div>
+            </div>
+        </div>
+        <div id="descrip">
+            <div class="desco2">
+                <h2>Acerca del Proyecto</h2>
+                <p class="proyecto_descript"><b>Qbita</b> es un proyecto de arte donde se presenta una galer&iacute;a de c&oacute;digos binarios y su ubicaci&oacute;n geogr&aacute;fica de manera interactiva. Tiene como objetivo acercar las obras a la vida cotidiana de las personas, ense&ntilde;&aacute;ndolas como una experiencia distinta a ver la obra en s&iacute;. Simplemente debe disponerse de un dispositivo de captura (c&aacute;mara web, smartphone, tablet, etc), visualizando el c&oacute;digo en el sitio web correspondiente (desde la secci&oacute;n de galer&iacute;a puede accederse a la captura indicada de manera simple e interactiva).</p>
+                <br />
+                <ul>
+                    <li><a href="#" class="link_cont">Ver Contacto del Sitio</a></li>
+                    <li><a href="#" class="link_demo">Ver Demo del Sitio</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../units/programa.js" language="javascript" type="text/javascript"></script>
+</body>
+</html>

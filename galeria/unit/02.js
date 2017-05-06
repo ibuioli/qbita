@@ -1,0 +1,2 @@
+document.write("<h3>Las L&iacute;neas como Expresiones</h3>");
+document.write("<p class=\"obra_d\"><img class=\"arw_i\" src=\"../img/arrow_i.png\" />Inspirada en una obra de Mariano Ferrante, las direcciones diagonales y la fuerte paleta cromática se articula con la profundidad, resignificándose con diversas opacidades.</p>");

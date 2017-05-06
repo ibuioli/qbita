@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Qbita - Galería</title>
+    <meta name="description" content="Qbita.com.ar - Sitio web que trabaja con el concepto de arte que modifica la persepción urbana, desde la ubicación web. Trabaja con una galería de realidad aumentaba, basadas en pinturas de artístas destacados." />
+    <meta name="keywords" content="realidad, aumentada, galeria, arte" />
+    <meta name="author" content="Andón Pablo, Eberhardt Nicolás, Colletti Karen, Buioli Ignacio" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <link href='../estilo.css' rel='stylesheet' type='text/css'>
+    <script src="../jquery.min.js" language="javascript" type="text/javascript"></script>
+    <script src="../jquery.validate.js" language="javascript" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="header">
+    <div style="background:#000;width:18px;height:18px;left:0;bottom:0;position:absolute;">
+    </div>
+    <h1>
+      <a href="../index.html"><img src="../img/biner.gif" alt="Qbita" class="imgh1" />Qbita</a>
+      <span style="font-size:12px;">beta</span>
+    </h1>
+    <ul>
+      <li class="bordeando"><a href="../galeria/index.html">Galer&iacute;a</a></li>
+      <li class="bordeando"><a href="../data/index.html">Data</a></li>
+      <li class="bordeando"><a href="../proyecto/index.html">Proyecto</a></li>
+      <li class="borde-sin-borde"><a href="../donde_estoy/index.html" class="donde">¿D&oacute;nde Estoy?</a></li>
+    </ul>
+    <div style="background:#000;width:18px;height:18px;right:0;bottom:0;position:absolute;"></div>
+  </div>
+    <div id="con">
+        <div id="galeria">
+            <div id="soporte_g">
+            	<script language="javascript" type="text/javascript">
+            		for (var i=1; i < 11; i++) {
+	        			document.write("<div class=\"obras\">");
+	        			document.write("<a href=\"../o/0"+i+".html\"><img src=\"../img/intros/0"+i+".gif\" /></a>");
+	        			document.write("<ul><li><a href=\"../o/0"+i+".html\">Informaci&oacute;n de la Obra</a><li></ul>");
+	        			document.write("<p class=\"ver_obra\"><img class=\"arw_d\" src=\"../img/arrow_d.png\" />Ver Obra</p>");
+	        			document.write('\x3Cscript type="text/javascript" src="unit/0'+i+'.js">\x3C/script>');
+	        			document.write("</div>");
+				    }
+            	</script>
+            </div>
+            <span class="par_i"><a href="#" class="menor">&lt;</a></span>
+            <span class="par_d"><a href="#" class="mayor">&gt;</a></span>
+        </div>
+    </div>
+    <script src="../units/programa.js" language="javascript" type="text/javascript"></script>
+  </body>
+</html>

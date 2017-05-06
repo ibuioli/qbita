@@ -1,0 +1,2 @@
+document.write("<h3>Ojos sin Color</h3>");
+document.write("<p class=\"obra_d\"><img class=\"arw_i\" src=\"../img/arrow_i.png\" />Basada en la obra El hombre de la flor amarilla (1932) de Emilio Pettoruti, se pretende crear una instalación que modifica la realidad urbana, trayendo a nuestra vida una magnifica obra.</p>");

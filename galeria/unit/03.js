@@ -1,0 +1,2 @@
+document.write("<h3>Mirada de Espejo</h3>");
+document.write("<p class=\"obra_d\"><img class=\"arw_i\" src=\"../img/arrow_i.png\" />Tomando como referencia la obra de René Magritte, el Espejo Falso, el espacio es intervenido por un significante que recorta la realidad a través de la mirada.</p>");
