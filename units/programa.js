@@ -1,3 +1,7 @@
+//VARS
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
 //SLIDE DOCS
 $("#concepto").click( function() {$("#entradas").animate({marginTop: "20px"},1000);});
 $("#tecno").click( function() {$("#entradas").animate({marginTop: "-500px"},1000);});
@@ -62,20 +66,28 @@ $(".obras a img").mouseenter( function() {$(".ver_obra").fadeIn(300);}).mouselea
 
 //FLASH
 $(".intro").click( function() {
+	$("#flash_2").html("");
+	$("#flash").html("<iframe width='400' height='300' src='model/"+page+"'></iframe>");
     $("#imagen").fadeOut(1);
     $("#flash").fadeIn(1);
 });
 
 //PANTALLA COMPLETA
 $(".b_spe").click( function() {
+	$("#flash").html("");
+	$("#flash_2").html("<iframe width='665' height='500' src='model/"+page+"'></iframe>");
     $("#flash").fadeOut(1);
     $("#imagen").fadeIn(1);
     $("#f_n").fadeIn(800);
 });
 $(".cerrar_v").click( function() {
+	$("#flash").html("");
+	$("#flash_2").html("");
     $("#f_n").fadeOut(600);
 });
 $(".f_n").click( function() {
+	$("#flash").html("");
+	$("#flash_2").html("");
     $("#f_n").fadeOut(600);
 });
 

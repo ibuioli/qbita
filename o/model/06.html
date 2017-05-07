@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Pattern marker ThreeJS + JSARToolKit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<style>
+html,body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow-x: hidden;
+}
+canvas{
+	width:100%;
+	height:100%;
+}
+.portrait canvas {
+	transform-origin: 0 0;
+	transform: rotate(-90deg) translateX(-100%);
+}
+.desktop canvas {
+ 	transform: scale(-1, 1);
+}
+</style>
+</head>
+
+<body>
+<script src="build/artoolkit.min.js"></script>
+<script src="js/third_party/three.js/three.min.js"></script>
+<script src="js/artoolkit.three.js"></script>
+<script src="js/ColladaLoader.js"></script>
+
+<script>
+
+window.ARThreeOnLoad = function() {
+
+	ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: 'Data/camera_para-iPhone 5 rear 640x480 1.0m.dat', 
+	onSuccess: function(arScene, arController, arCamera) {
+
+		document.body.className = arController.orientation;
+
+		var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, premultipliedAlpha: false});
+		if (arController.orientation === 'portrait') {
+			var w = (window.innerWidth / arController.videoHeight) * arController.videoWidth;
+			var h = window.innerWidth;
+			renderer.setSize(w, h);
+			renderer.domElement.style.paddingBottom = (w-h) + 'px';
+		} else {
+			if (/Android|mobile|iPad|iPhone/i.test(navigator.userAgent)) {
+				renderer.setSize(window.innerWidth, (window.innerWidth / arController.videoWidth) * arController.videoHeight);
+			} else {
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				document.body.className += ' desktop';
+			}
+		}
+
+		document.body.insertBefore(renderer.domElement, document.body.firstChild);
+
+		var model;
+		var loader = new THREE.ColladaLoader();
+		loader.options.convertUpAxis = true;
+		loader.load( './model/mondrian.dae', function ( collada ) {
+
+			model = collada.scene;
+			model.position.z = 0.2;
+			model.rotation.x = 1.5708;
+			model.scale.x = 0.15;
+			model.scale.y = 0.15;
+			model.scale.z = 0.15;
+			for (var i = 0; i <= model.children.length-1; i++) {
+				if(model.children[i].children[0].type === "Mesh"){
+					model.children[i].children[0].material.transparent = true;
+				}
+			}
+			
+			arController.loadMarker('Data/06.pat', function(markerId) {
+				var markerRoot = arController.createThreeMarker(markerId);
+				markerRoot.add(model);
+				var light = new THREE.AmbientLight( 0xffffff, 1 );
+
+				arScene.scene.add(light);
+				arScene.scene.add(markerRoot);
+			});
+
+		} );
+
+		var tick = function() {
+			arScene.process();
+
+			arScene.renderOn(renderer);
+			requestAnimationFrame(tick);
+		};
+
+		tick();
+
+	}});
+
+	delete window.ARThreeOnLoad;
+
+};
+
+if (window.ARController && ARController.getUserMediaThreeScene) {
+	ARThreeOnLoad();
+}
+</script>
+
+</body>
+</html>
